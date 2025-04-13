@@ -1,2 +1,2 @@
-docker build -t docker/nethack-app .
-docker run --rm docker/nethack-app
+docker build -t nethack-app ./docker
+docker run --rm nethack-app
