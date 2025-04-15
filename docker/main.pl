@@ -1,11 +1,10 @@
-:- use_module(library(python)).
+library(janus).
 
-:- python_import(gymnasium).
+:- py_import(gymnasium, [as(gym)]).
 
-:- python_import( nle ).
+:- py_import(nle, []).
 
-:-
-    env := gymnasium.make(`NetHackScore-v0`),
-    env.reset(),  % each reset generates a new dungeon
-    env.step(1),  % move agent '@' north
-    env.render().
+:- py_call(gym:make("NetHackScore-v0"), Env),
+    py_call(Env:reset()),  % each reset generates a new dungeon
+    py_call(Env:step(1)),  % move agent '@' north
+    py_call(Env:render()).
